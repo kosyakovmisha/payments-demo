@@ -1,11 +1,10 @@
 package com.dev.paymentsdemo.category;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -25,4 +24,18 @@ public class CategoryController {
         return categoryService.getById(id);
     }
 
+    @PostMapping("/categories")
+    public Category createCategory(@Valid @RequestBody Category category) {
+        return categoryService.add(category);
+    }
+
+    @PutMapping("/categories/{id}")
+    public void updateCategory(@PathVariable("id") Integer id, @RequestBody Category category) {
+        categoryService.update(category, id);
+    }
+
+    @DeleteMapping("/categories/{id}")
+    public void deleteCategory(@PathVariable("id") Integer id) {
+        categoryService.delete(id);
+    }
 }

@@ -1,7 +1,7 @@
 drop table if exists categories;
 
 create table categories (
-    category_id int primary key ,
+    category_id serial primary key ,
     category_name varchar(15) not null unique ,
     category_description varchar(30)
 );
@@ -9,7 +9,7 @@ create table categories (
 drop table if exists payments;
 
 create table payments (
-    payment_id int primary key,
+    payment_id serial primary key,
     payment_name varchar(20) not null unique,
     payment_description varchar(30),
     category_id int references categories(category_id)
