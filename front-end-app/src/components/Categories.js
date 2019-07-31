@@ -2,20 +2,23 @@ import React from 'react';
 
 export class Categories extends React.Component {
 
-
-    getCategoriesList = () => {
+    componentDidMount() {
         this.props.getCategories();
-        return this.props.categories.map(category => {
-            return(
-                <tr key={category.id}>
-                    <td>{category.name}</td>
-                    <td>{category.description}</td>
-                </tr>
-            )
-        })
+        console.log(this.props.categories);
+    }
+
+    renderTemplate = () => {
+        console.log(this.props.categories);
+        return this.props.categories.map(entry=> (
+            <tr key={entry.id}>
+                <td>{entry.name}</td>
+                <td>{entry.description}</td>
+            </tr>
+        ));
     };
 
     render() {
+        console.log(this.props.categories);
         return (
             <div>
                 <h1>Categories</h1>
@@ -25,7 +28,12 @@ export class Categories extends React.Component {
                         <th>Description</th>
                     </thead>
                     <tbody>
-                    {this.getCategoriesList}
+                    {this.props.categories.map(entry=> (
+                        <tr key={entry.id}>
+                            <td>{entry.name}</td>
+                            <td>{entry.description}</td>
+                        </tr>
+                    ))}
                     </tbody>
                 </table>
             </div>

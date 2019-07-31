@@ -7,7 +7,7 @@ class Categories extends Component {
     render() {
         const { categories, getCategories } = this.props;
         return (
-            <CategoryTable categories={categories.list} getCategories={getCategories}/>
+            <CategoryTable categories={categories} getCategories={getCategories}/>
         );
     };
 
@@ -21,7 +21,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getCategories: dispatch(getCategories)
+        getCategories: x => dispatch(getCategories())
     }
 };
 

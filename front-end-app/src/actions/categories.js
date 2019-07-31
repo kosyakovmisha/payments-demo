@@ -15,13 +15,13 @@ export const getCategories = () => {
     return (dispatch) => {
         return axios.get('categories')
             .then(result => {
-                const list = [];
+                const categories = [];
 
                 result.data.forEach(category => {
-                    list.push(category);
+                    categories.push(category);
                 });
 
-                dispatch(_getCategories(list));
+                dispatch(_getCategories(categories));
             });
     };
 };
