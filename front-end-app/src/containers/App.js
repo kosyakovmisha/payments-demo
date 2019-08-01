@@ -5,7 +5,6 @@ import { Container } from 'react-bootstrap';
 
 class App extends Component{
     render() {
-        const { data, getCategories } = this.props;
         return (
             <React.Fragment>
                 <Container>

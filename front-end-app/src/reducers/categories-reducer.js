@@ -5,7 +5,7 @@ const categoriesReducerDefaultState = [];
 export default (state = categoriesReducerDefaultState, action) => {
     switch (action.type) {
         case GET_CATEGORIES:
-            return [...state, action.categories];
+            return [...action.categories];
         default:
             return state;
     }

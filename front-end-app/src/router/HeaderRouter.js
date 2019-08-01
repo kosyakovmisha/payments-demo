@@ -5,6 +5,7 @@ import { About } from '../components/About';
 import  Categories  from '../containers/Categories';
 import { Payments } from '../components/Payments';
 import { Header as AppHeader} from "../components/Header";
+import { CategoryEdit } from "../components/CategoryEdit";
 
 export const HeaderRouter = () => (
     <Router>
@@ -14,6 +15,7 @@ export const HeaderRouter = () => (
             <Route exact path="/about" component={About}/>
             <Route exact path="/payments" component={Payments}/>
             <Route exact path="/categories" component={Categories}/>
+            <Route exact path="/categories/:id" components={CategoryEdit}/>
             <Route component={Home}/>
         </Switch> 
     </Router>
