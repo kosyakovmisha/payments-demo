@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import  ModalDelete from './ModalDelete';
 
 export class Categories extends React.Component {
 
@@ -23,7 +21,7 @@ export class Categories extends React.Component {
                             Change
                         </Button>
                     </Link>
-                    <Link>
+                    <Link to="">
                         <Button variant="outline-danger" size="sm">
                             Delete
                         </Button>
@@ -40,7 +38,11 @@ export class Categories extends React.Component {
                 <br/>
                 <div className="row">
                     <div className="col-md-10 "><h2>Categories</h2></div>
-                    <div className="col-md text-right"><Button variant="outline-dark" >Add Category</Button></div>
+                    <div className="col-md text-right">
+                        <Link to ="/categories/add">
+                            <Button variant="outline-dark" >Add Category</Button>
+                        </Link>
+                    </div>
                 </div>
                 <div>
                     <table className="table table-hover">

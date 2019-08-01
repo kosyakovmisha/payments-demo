@@ -6,6 +6,7 @@ export const GET_CATEGORIES = "GET_CATEGORIES";
 export const UPDATE_CATEGORY = "UPDATE_CATEGORY";
 export const REMOVE_CATEGORY = "REMOVE_CATEGORY";
 
+
 const _getCategories = (categories) => ({
     type: GET_CATEGORIES,
     categories
