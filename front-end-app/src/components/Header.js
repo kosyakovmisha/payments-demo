@@ -1,24 +1,9 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import styled from 'styled-components';
-
-const Styles = styled.div`
-    .navbar {
-        background-color: #222;
-    }
-
-    .navbar-brand, .navbar-nav .nav-link{
-        color: #bbb;
-
-        &:hover {
-            color: white;
-        }
-    }
-`
 
 export const Header =() => (
-    <Styles>
-        <Navbar expand="lg">
+
+        <Navbar expand="lg" bg="dark" variant="dark" sticky="top">
             <Navbar.Brand href ="/">Web-Payments</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -29,5 +14,5 @@ export const Header =() => (
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
-    </Styles>
-)
+
+);

@@ -9,7 +9,6 @@ import { CategoryEdit } from "../components/CategoryEdit";
 
 export const HeaderRouter = () => (
     <Router>
-        <AppHeader />
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/>

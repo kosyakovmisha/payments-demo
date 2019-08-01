@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import  ModalDelete from './ModalDelete';
 
 export class Categories extends React.Component {
 
@@ -18,10 +19,14 @@ export class Categories extends React.Component {
                 <td className="col-6">{entry.description}</td>
                 <td className="col-2 text-right">
                     <Link to={`/categories/${entry.id}`}>
-                        <Button variant="outline-secondary" size="sm" className="mr-1">Change</Button>
+                        <Button variant="outline-secondary" size="sm" className="mr-1">
+                            Change
+                        </Button>
                     </Link>
                     <Link>
-                        <Button variant="outline-danger" size="sm">Delete</Button>
+                        <Button variant="outline-danger" size="sm">
+                            Delete
+                        </Button>
                     </Link>
                 </td>
             </tr>
